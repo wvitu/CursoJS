@@ -1,0 +1,38 @@
+body {
+    background: rgb(191, 191, 230);
+    font: normal 18pt Arial;
+
+}
+
+header {
+color: white;
+text-align: center;
+}
+
+section {
+background: white;
+border-radius: 10px;
+padding: 15px;
+width: 500px;
+margin: auto;
+box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.438);
+
+}
+
+div {
+    text-align: center;
+    padding: 8px;
+}
+
+img {
+    max-width: 100%; /* Garante que a imagem nunca ultrapasse o tamanho do contêiner */
+    height: auto; /* Mantém a proporção da imagem */
+    display: block; /* Evita espaços extras ao redor da imagem */
+    margin: auto; /* Centraliza a imagem */
+}
+
+footer {
+color: white;
+text-align: center;
+font-style: italic;
+}
