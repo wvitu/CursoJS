@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta de Nascionalidade</title>
+</head>
+<body>
+    <h1>Sistema de consulta de Nascionalidade</h1>
+    Onde você nasceu? 
+    <p>
+        <label for="txtpais">País</label>
+        <select name="Pais" id="txtpais">
+            <option value="" selected>--- Escolha ---</option>
+                <optgroup label="África">
+                    <option value="nigeria">Nigéria</option>
+                    <option value="ethiopia">Etiópia</option>
+                    <option value="egypt">Egito</option>
+                    <option value="drc">República Democrática do Congo</option>
+                    <option value="south_africa">África do Sul</option>
+                    <option value="tanzania">Tanzânia</option>
+                    <option value="kenya">Quênia</option>
+                    <option value="algeria">Argélia</option>
+                    <option value="sudan">Sudão</option>
+                    <option value="uganda">Uganda</option>
+                </optgroup>
+                <optgroup label="América">
+                    <option value="usa">Estados Unidos</option>
+                    <option value="brazil">Brasil</option>
+                    <option value="mexico">México</option>
+                    <option value="canada">Canadá</option>
+                    <option value="argentina">Argentina</option>
+                    <option value="colombia">Colômbia</option>
+                    <option value="chile">Chile</option>
+                    <option value="peru">Peru</option>
+                    <option value="venezuela">Venezuela</option>
+                    <option value="ecuador">Equador</option>
+                </optgroup>
+                <optgroup label="Ásia">
+                    <option value="china">China</option>
+                    <option value="india">Índia</option>
+                    <option value="indonesia">Indonésia</option>
+                    <option value="pakistan">Paquistão</option>
+                    <option value="bangladesh">Bangladesh</option>
+                    <option value="russia">Rússia</option>
+                    <option value="japan">Japão</option>
+                    <option value="philippines">Filipinas</option>
+                    <option value="vietnam">Vietnã</option>
+                    <option value="iran">Irã</option>
+                </optgroup>
+                <optgroup label="Europa">
+                    <option value="germany">Alemanha</option>
+                    <option value="france">França</option>
+                    <option value="uk">Reino Unido</option>
+                    <option value="italy">Itália</option>
+                    <option value="spain">Espanha</option>
+                    <option value="poland">Polônia</option>
+                    <option value="ukraine">Ucrânia</option>
+                    <option value="netherlands">Holanda</option>
+                    <option value="romania">Romênia</option>
+                    <option value="sweden">Suécia</option>
+                </optgroup>
+                <optgroup label="Oceania">
+                    <option value="australia">Austrália</option>
+                    <option value="papua_new_guinea">Papua-Nova Guiné</option>
+                    <option value="new_zealand">Nova Zelândia</option>
+                    <option value="fiji">Fiji</option>
+                    <option value="solomon_islands">Ilhas Salomão</option>
+                    <option value="vanuatu">Vanuatu</option>
+                    <option value="samoa">Samoa</option>
+                    <option value="kiribati">Kiribati</option>
+                    <option value="tonga">Tonga</option>
+                    <option value="micronesia">Micronésia</option>
+                </optgroup>
+    </select>
+
+    <input type="button" value="Verificar" onclick="Verificar()">
+    
+    </p>
+    <div id="res">
+
+    </div>
+
+    <script>
+    function Verificar() {
+        var txtpais = document.querySelector('select#txtpais')
+        var res = document.querySelector('div#res')
+        var valor = txtpais.value // Pega o valor do <option>
+
+    res.innerHTML = `<p>O país que você nasceu é <strong>${txtpais.options[txtpais.selectedIndex].text}</strong>.</p>`
+
+    if (valor === "brazil") { // Comparação com o value do <option>
+        res.innerHTML += `<p>Você é <strong>Brasileiro</strong></p>`
+    } else if (valor !== "") { // Se a escolha não for vazia (Brasil já foi tratado acima)
+        res.innerHTML += `<p>Você é <strong>Estrangeiro.</strong></p>`
+    }
+}
+    </script>
+</body>
+</html>
